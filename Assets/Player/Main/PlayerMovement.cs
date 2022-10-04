@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 12f;
     public float gravity = -19.64f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 5f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -24,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private State state;
     private Vector3 hookshotPosition;
     private Vector3 characterVelocityMomentum;
-    [SerializeField] float maxGrapableDistance=100f;
+    public float maxGrapableDistance=50f;
+    public float hookshootSpeed=100f;
     public LayerMask whatIsGrappleables;
     //[SerializeField] bool isEpressed = false;
     [SerializeField] Transform hookShotTransform;
@@ -165,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
     private void HandleHookshotThrown()
     {
         hookShotTransform.LookAt(hookshotPosition);
-        float hookshootThroowSpeed = 120f;
+        float hookshootThroowSpeed = hookshootSpeed; //Hook Shot Speed------------120f
         hookShotTransform.LookAt(hookshotPosition);
         hookshotSize += hookshootThroowSpeed * Time.deltaTime;
         hookShotTransform.localScale = new Vector3(1, 1, hookshotSize);
