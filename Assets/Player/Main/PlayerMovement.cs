@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    public float PlayerHealth = 3f;
 
     [Header("GraplingGun")]
     public GameObject PlayerCamera;
