@@ -11,6 +11,18 @@ public class EnemyColide : MonoBehaviour
     public GameObject Heart2;
     public GameObject Heart3;
 
+    public CountDown cd;
+
+
+    public GameObject GameLostText;
+    private void Update()
+    {
+        if (cd.curenttime < 0.5f)
+        {
+            //Debug.Log(cd.curenttime);
+            PlayerDeadFunctio();
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -33,13 +45,15 @@ public class EnemyColide : MonoBehaviour
             
             
         }
+        
+
     }
     public void PlayerDeadFunctio()
     {
         PlayerDeadCamera.SetActive(true);
         Player.SetActive(false);
-
-        Debug.Log("Player is Dead");
+        GameLostText.SetActive(true);
+        //Debug.Log("Player is Dead");
     }
 }
 

@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
+
 
 public class Object : MonoBehaviour
 {
     public PlayerMovement pm;
     public GameObject Itself;
+    [SerializeField] TextMeshProUGUI SpeedText;
+    [SerializeField] TextMeshProUGUI PlayerSeedCount;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +21,10 @@ public class Object : MonoBehaviour
             pm.speed -= 2f;
             pm.jumpHeight -= 1f;
             Destroy(Itself);
+            pm.currentSpeed -= 10f;
+            SpeedText.text = pm.currentSpeed.ToString("0");
+            pm.seedcount += 1f;
+            PlayerSeedCount.text = pm.seedcount.ToString("0");
         }
     }
 }

@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     public float PlayerHealth = 3f;
 
+    public float currentSpeed = 100f;
+    public float seedcount = 0f;
+
     [Header("GraplingGun")]
     public GameObject PlayerCamera;
     [SerializeField] GameObject debugHitPointTransform;
