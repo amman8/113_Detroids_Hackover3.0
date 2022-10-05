@@ -8,9 +8,10 @@ public class CameraControler : MonoBehaviour
     public Transform playerbody;
     float xr = 0;
 
+    public PlayerMovement s_pmms;
+
     void Awake()
     {
-
         Cursor.lockState = CursorLockMode.Locked;
 
     }
@@ -27,7 +28,15 @@ public class CameraControler : MonoBehaviour
         playerbody.Rotate(Vector3.up * mx);
         xr = Mathf.Clamp(xr, -90, 90);
         transform.localRotation = Quaternion.Euler(xr, 0, 0);
-
+        if(s_pmms.isMenuOn == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if(s_pmms.isMenuOn == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
 
 
 

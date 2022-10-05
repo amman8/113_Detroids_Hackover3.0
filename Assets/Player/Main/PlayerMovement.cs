@@ -43,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("ParticalSystem")]
     public ParticleSystem ParticalSystem;
+    [Header("PauseMenu")]
+    public GameObject PauseMenu;
+    public bool isMenuOn = false;
+    public AudioSource ButtonClickAudio;
 
 
 
@@ -96,7 +100,12 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("------FallDamage----");
         }*/
         //Debug.Log(velocity.y);
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isMenuOn =! isMenuOn;
+            PauseMenu.SetActive(isMenuOn);
+            ButtonClickAudio.Play();
+        }
     }
 
     private void PlayerControl()
