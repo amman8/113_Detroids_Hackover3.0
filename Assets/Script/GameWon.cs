@@ -22,10 +22,16 @@ public class GameWon : MonoBehaviour
             EndScreen.SetActive(true);
             Player.SetActive(false);
             GameWonText.SetActive(true);
+            Invoke("NextCean",9f);
         }
         /*if(other.CompareTag("Player") && s_playerscripty.seedcount <= 3)
         {
 
         }*/
+    }
+
+    public void NextCean()
+    {
+        SceneManager.LoadScene(2);
     }
 }
