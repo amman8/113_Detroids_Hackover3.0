@@ -23,5 +23,9 @@ public class GameWon : MonoBehaviour
             Player.SetActive(false);
             GameWonText.SetActive(true);
         }
+        /*if(other.CompareTag("Player") && s_playerscripty.seedcount <= 3)
+        {
+
+        }*/
     }
 }

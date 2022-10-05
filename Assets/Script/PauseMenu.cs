@@ -6,35 +6,36 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public PlayerMovement s_PMS;
+    public AudioSource Button;
     public GameObject LevelChoose;
     
 
     public void PlayOnMainMenu()
     {
-        s_PMS.ButtonClickAudio.Play();
+        Button.Play();
         LevelChoose.SetActive(true);
     }
 
     public void Level1()
     {
-        s_PMS.ButtonClickAudio.Play();
+        Button.Play();
         SceneManager.LoadScene(1);
     }
 
     public void QuitButtonPauseMenu()
     {
-        s_PMS.ButtonClickAudio.Play();
+        Button.Play();
         SceneManager.LoadScene(0);
     }
 
     public void QuitButtonMainMenu()
     {
-        s_PMS.ButtonClickAudio.Play();
+        Button.Play();
         Application.Quit();
     }
     public void ResumeMenu()
     {
-        s_PMS.ButtonClickAudio.Play();
+        Button.Play();
         s_PMS.isMenuOn =! s_PMS.isMenuOn;
     }    
 }

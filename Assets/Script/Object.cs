@@ -11,11 +11,13 @@ public class Object : MonoBehaviour
     public GameObject Itself;
     [SerializeField] TextMeshProUGUI SpeedText;
     [SerializeField] TextMeshProUGUI PlayerSeedCount;
+    public AudioSource PickedAudio;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+            PickedAudio.Play();
             pm.maxGrapableDistance -= 10f;
             pm.hookshootSpeed -= 10f;
             pm.speed -= 2f;
