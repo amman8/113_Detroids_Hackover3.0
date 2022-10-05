@@ -25,20 +25,22 @@ public class EnemyColide : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && pms.isSheeldOn == false)
         {
-            Debug.Log("Player is Dead");
+            
+            
+            //Debug.Log("Player is Dead");
             pms.PlayerHealth--;
-            if(pms.PlayerHealth==2)
+            if(pms.PlayerHealth==2 )
             {
                 Heart3.SetActive(false);
             }
-            if (pms.PlayerHealth == 1)
+            if (pms.PlayerHealth == 1 )
             {
                 Heart2.SetActive(false);
             }
 
-            if (pms.PlayerHealth == 0)
+            if (pms.PlayerHealth == 0 )
             {
                 PlayerDeadFunctio();
             }

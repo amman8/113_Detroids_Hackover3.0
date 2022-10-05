@@ -48,7 +48,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isMenuOn = false;
     public AudioSource ButtonClickAudio;
 
-
+    [Header("Shield")]
+    public GameObject PlayerShield;
+    public bool isSheeldOn = false;
+    public bool ShieldDestroyed= false;
 
     private enum State
     {
@@ -106,6 +109,18 @@ public class PlayerMovement : MonoBehaviour
             PauseMenu.SetActive(isMenuOn);
             ButtonClickAudio.Play();
         }
+        if(seedcount >3f)
+        {
+            Debug.Log("Working");
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                //ShieldDestroyed = false;
+                isSheeldOn = !isSheeldOn;
+                PlayerShield.SetActive(isSheeldOn);
+            }
+                //Debug.Log("E key was released.");
+        }
+
     }
 
     private void PlayerControl()

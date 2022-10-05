@@ -17,6 +17,7 @@ public class Object : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            
             PickedAudio.Play();
             pm.maxGrapableDistance -= 10f;
             pm.hookshootSpeed -= 10f;
